@@ -14,6 +14,28 @@ const bookRoute = require('./routes/books');
 app.use('/', mainRoute);
 app.use('/books', bookRoute);
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handlers
+app.use((req, res, next) => {
+  const error = new Error('Not found');
+  next(error);
+});
+
+app.use((error, req, res, next) => {
+  res.locals.error = error;
+  error.status = 404;
+  error.message = 'Sorry, that page does not exist!';
+  res.status(error.status);
+  console.log(error.message);
+  res.render('error', error);
+});
+
 sequelize.sync().then(() => {
   app.listen(3001);
 });

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  header.header
+    .container
+      h1 Error #{error.status}
+      div
+        a.button.btn-secondary(href='/') Go Back Home
+
+  section
+    .container.mt-10
+      p= error.message
