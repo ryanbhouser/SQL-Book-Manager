@@ -47,7 +47,7 @@ router.get('/:id/edit', (req, res, next) => {
   });
 });
 
-/* PUT updated book. */
+// PUT updated book.
 router.post('/:id/edit', (req, res, next) => {
   Books.findByPk(req.params.id)
     .then(book => {
@@ -55,6 +55,26 @@ router.post('/:id/edit', (req, res, next) => {
     })
     .then(book => {
       res.redirect('/books/' + book.id);
+    });
+});
+
+// Delete book form
+router.get('/:id/delete', function(req, res, next) {
+  Books.findByPk(req.params.id).then(book => {
+    res.render('books/delete', {
+      books: book,
+      title: 'Delete Book'
+    });
+  });
+});
+
+router.post('/:id/delete', function(req, res, next) {
+  Books.findByPk(req.params.id)
+    .then(function(book) {
+      return book.destroy();
+    })
+    .then(function() {
+      res.redirect('/books');
     });
 });
 
