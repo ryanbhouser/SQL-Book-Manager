@@ -1,0 +1,27 @@
+{
+  "name": "sql-book-manager",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000S\u0000Q\u0000L\u0000-\u0000B\u0000o\u0000o\u0000k\u0000-\u0000M\u0000a\u0000n\u0000a\u0000g\u0000e\u0000r\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanbhouser/SQL-Book-Manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanbhouser/SQL-Book-Manager/issues"
+  },
+  "homepage": "https://github.com/ryanbhouser/SQL-Book-Manager#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4",
+    "sequelize": "^5.8.10",
+    "sequelize-cli": "^5.5.0",
+    "sqlite3": "^4.0.9"
+  }
+}

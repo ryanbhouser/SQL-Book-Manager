@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap');
+
+// Variables
+$color-primary: #019875;
+$color-primary-light: #d9ebe7;
+$color-secondary: #1694cc;
+$color-secondary-light: #69d0ff;
+$color-error: #cc1631;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 18px 'Open Sans', serif;
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    & > *:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.header {
+  background: $color-primary;
+  height: 15vh;
+}
+
+h1 {
+  color: #fff;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn {
+  text-decoration: none;
+  font-weight: bold;
+  transition: box-shadow 0.2s;
+
+  &-primary {
+    color: $color-primary;
+    background: #fff;
+    padding: 10px 14px 12px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid #fff;
+  }
+
+  &-secondary {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 14px 12px;
+    font-size: 14px;
+    border-radius: 2px;
+  }
+}
+
+.content {
+  margin-top: 5vh;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+th {
+  border-bottom: 3px solid $color-secondary;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 10px 20px 10px 10px;
+}
+
+tr {
+  min-height: 50px;
+
+  &:nth-child(2n) {
+    background: #f1f1f1;
+  }
+
+  &:hover {
+    background-color: $color-primary-light;
+  }
+}
+
+.no-hover {
+  &:hover {
+    background-color: #fff;
+  }
+}
+
+// FORM STYLES
+form {
+  width: 100%;
+}
+
+.group {
+  position: relative;
+  margin-bottom: 45px;
+
+  input[type='text'] {
+    font-size: 18px;
+    font-family: inherit;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #757575;
+  }
+  input[type='text']:focus {
+    outline: none;
+  }
+
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  input[type='text']:focus ~ label,
+  input[type='text']:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: $color-primary;
+  }
+}
+
+.btn-group {
+  display: flex;
+}
+
+input[type='submit'] {
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  background-color: $color-primary;
+  padding: 10px 14px 12px;
+  font-size: 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.bar:before,
+.bar:after {
+  content: '';
+  height: 3px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $color-secondary;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after {
+  width: 50%;
+}
+
+
+
+input.error {
+  float: right;
+  color: $color-error;
+  border-radius: 2px;
+  border: 1px solid $color-error;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+ul {
+  color: $color-error;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 10px;
+  line-height: 1.3em;
+}
