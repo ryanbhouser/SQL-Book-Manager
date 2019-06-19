@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  header.header
+    .container
+      h1 Edit this Book
+      a.btn.btn-primary(href='/') Go Back Home
+    section.content
+      .container
+        h2= books.title
+      .container
+        p By 
+          = books.author
+      .container
+        p Genre:
+          = books.genre
+      .container
+        p Year published:
+          = books.year

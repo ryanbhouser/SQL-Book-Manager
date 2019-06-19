@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  header.header
+    .container
+      h1= title
+      div
+        a.button.btn-secondary(href='/') Cancel
+  section.content
+    .container
+      form(action="/books", method="post")
+        include form

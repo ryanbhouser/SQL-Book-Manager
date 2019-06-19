@@ -1,0 +1,22 @@
+.group
+  input#title(name='title', type='text', value=books.title)
+  span.highlight
+  span.bar
+  label(for='title') Title
+.group
+  input#author(name='author', type='text', value=books.author)
+  span.highlight
+  span.bar
+  label(for='author') Author
+.group
+  input#genre(name='genre', type='text', value=books.genre)
+  span.highlight
+  span.bar
+  label(for='genre') Genre
+.group
+  input#year(name='year', type='text', value=books.year)
+  span.highlight
+  span.bar
+  label(for='year') Year
+.btn-group
+  input(type='submit' value='Create New Book')
