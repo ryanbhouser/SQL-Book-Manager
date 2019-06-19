@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  header.header
+    .container
+      h1= title
+      a.button.btn-secondary(href='/books') Cancel
+  section.content
+    include ../errors
+    .container
+      form(action="/books/" + books.id +"/edit", method="post")
+        include form

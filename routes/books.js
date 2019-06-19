@@ -37,4 +37,25 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+// Edit a book
+router.get('/:id/edit', (req, res, next) => {
+  Books.findByPk(req.params.id).then(book => {
+    res.render('books/edit', {
+      books: book,
+      title: 'Edit Book'
+    });
+  });
+});
+
+/* PUT updated book. */
+router.post('/:id/edit', (req, res, next) => {
+  Books.findByPk(req.params.id)
+    .then(book => {
+      return book.update(req.body);
+    })
+    .then(book => {
+      res.redirect('/books/' + book.id);
+    });
+});
+
 module.exports = router;
