@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
       res.render('books/index', { books: books, title: 'Book Manager' });
     })
     .catch(error => {
-      res.send(500);
+      res.sendStatus(500);
     });
 });
 
@@ -22,13 +22,24 @@ router.get('/new', (req, res, next) => {
 });
 
 // POST create book
-router.post('/', (req, res, next) => {
+router.post('/new', (req, res, next) => {
   Books.create(req.body)
     .then(book => {
       res.redirect('/books/' + book.id);
     })
     .catch(error => {
-      res.send(500);
+      if (error.name === 'SequelizeValidationError') {
+        res.render('books/new', {
+          books: Books.build(req.body),
+          title: 'Add a New Book',
+          errors: error.errors
+        });
+      } else {
+        throw error;
+      }
+    })
+    .catch(error => {
+      res.sendStatus(500);
     });
 });
 
@@ -48,7 +59,7 @@ router.get('/:id', (req, res, next) => {
       }
     })
     .catch(error => {
-      res.send(500);
+      res.sendStatus(500);
     });
 });
 
@@ -71,7 +82,7 @@ router.get('/:id/edit', (req, res, next) => {
       }
     })
     .catch(error => {
-      res.send(500);
+      res.sendStatus(500);
     });
 });
 
@@ -92,6 +103,23 @@ router.post('/:id/edit', (req, res, next) => {
     })
     .then(book => {
       res.redirect('/books/' + book.id);
+    })
+    .catch(error => {
+      if (error.name === 'SequelizeValidationError') {
+        console.log(error);
+        const book = Books.build(req.body);
+        book.id = req.params.id;
+        res.render('books/edit', {
+          books: book,
+          title: 'Add a New Book',
+          errors: error.errors
+        });
+      } else {
+        throw err;
+      }
+    })
+    .catch(error => {
+      res.sendStatus(500);
     });
 });
 
@@ -114,7 +142,7 @@ router.get('/:id/delete', function(req, res, next) {
       }
     })
     .catch(error => {
-      res.send(500);
+      res.sendStatus(500);
     });
 });
 
@@ -137,7 +165,7 @@ router.post('/:id/delete', function(req, res, next) {
       res.redirect('/books');
     })
     .catch(error => {
-      res.send(500);
+      res.sendStatus(500);
     });
 });
 

@@ -8,5 +8,7 @@ block content
         a.button.btn-secondary(href='/') Cancel
   section.content
     .container
-      form(action="/books", method="post")
+      form(action="/books/new", method="post")
         include form
+    .container
+      include ../errors

@@ -218,9 +218,12 @@ input.error {
 }
 
 ul {
-  color: $color-error;
   padding: 0;
   list-style-type: none;
   margin-bottom: 10px;
   line-height: 1.3em;
+}
+
+.error {
+  color: $color-error;
 }
