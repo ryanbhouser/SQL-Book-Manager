@@ -1,22 +1,22 @@
 .group
-  input#title(name='title', type='text', value=books.title)
-  span.highlight
-  span.bar
   label(for='title') Title
-.group
-  input#author(name='author', type='text', value=books.author)
+  input(name='title', type='text', value=books.title, id='title')
   span.highlight
   span.bar
+.group
   label(for='author') Author
-.group
-  input#genre(name='genre', type='text', value=books.genre)
+  input(name='author', type='text', value=books.author, id='author')
   span.highlight
   span.bar
+.group
   label(for='genre') Genre
-.group
-  input#year(name='year', type='text', value=books.year)
+  input(name='genre', type='text', value=books.genre, id='genre')
   span.highlight
   span.bar
+.group
   label(for='year') Year
+  input(name='year', type='text', value=books.year, id='year')
+  span.highlight
+  span.bar
 .btn-group
   input(type='submit' value='Submit')

@@ -5,19 +5,19 @@ block content
     .container
       h1 Edit this Book
       a.btn.btn-secondary(href='/') Go Back Home
-    section.content
-      .container
-        h2= books.title
-      .container
-        p By 
-          = books.author
-      .container
-        p Genre:
-          = books.genre
-      .container
-        p Year published:
-          = books.year
-      .container
-        div.mt-10
-          a.button.btn-tertiary(href='/books/' + books.id + '/edit') Edit Book Information
-          a.button.btn-error(href='/books/' + books.id + '/delete') Delete Book
+  section.content
+    .container
+      h2= books.title
+    .container
+      p By 
+        = books.author
+    .container
+      p Genre:
+        = books.genre
+    .container
+      p Year published:
+        = books.year
+    .container
+      div.mt-10
+        a.button.btn-tertiary(href='/books/' + books.id + '/edit') Edit Book Information
+        a.button.btn-error(href='/books/' + books.id + '/delete') Delete Book
