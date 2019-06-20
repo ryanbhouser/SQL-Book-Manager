@@ -6,11 +6,11 @@ block content
       h1= title
       a.button.btn-secondary(href="/books/" + books.id) Take me back! 
   section.section
-    .container.mt-10
+    .container.mt-45
       p 
         | Are you sure you want to delete 
         em= books.title
         | ?
-    .container
+    .container.mt-10
       form(action="/books/" + books.id + "/delete", method="post")
         input.error-sec.mt-10(type="submit", value = "Yes, I am")
