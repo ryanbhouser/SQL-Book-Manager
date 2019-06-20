@@ -18,5 +18,6 @@ block content
         p Year published:
           = books.year
       .container
-        a.button.btn-tertiary(href='/books/' + books.id + '/edit') Edit Book Information
-        a.button.btn-tertiary(href='/books/' + books.id + '/delete') Delete Book
+        div.mt-10
+          a.button.btn-tertiary(href='/books/' + books.id + '/edit') Edit Book Information
+          a.button.btn-error(href='/books/' + books.id + '/delete') Delete Book

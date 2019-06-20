@@ -78,6 +78,15 @@ a {
     font-size: 14px;
     border-radius: 2px;
   }
+
+  &-error {
+    background-color: #fff;
+    color: $color-error;
+    border-radius: 2px;
+    border: 1px solid $color-error;
+    padding: 10px 14px 12px;
+    font-size: 14px;
+  }
 }
 
 .content {
@@ -206,9 +215,9 @@ input:focus ~ .bar:after {
   width: 50%;
 }
 
-input.error {
-  float: right;
-  color: $color-error;
+input.error-sec {
+  color: #fff;
+  background-color: $color-error;
   border-radius: 2px;
   border: 1px solid $color-error;
 }
@@ -226,4 +235,5 @@ ul {
 
 .error {
   color: $color-error;
+  text-align: center;
 }
