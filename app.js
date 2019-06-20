@@ -37,6 +37,6 @@ app.use((error, req, res, next) => {
 });
 
 sequelize.sync().then(() => {
-  app.listen(3001);
+  app.listen(3000);
 });
-console.log('Project running on localhost:3001');
+console.log('Project running on localhost:3000');
